@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <>
-      <div>amazon clone</div>
       <Navbar />
     </>
   );

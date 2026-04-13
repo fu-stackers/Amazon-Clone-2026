@@ -24,3 +24,7 @@
   --btn-yellow-top: #f7ca00; /* Use for: Top of the gradient on yellow buttons */
   --btn-yellow-bottom: #f0c14b; /* Use for: Bottom of the gradient on yellow buttons */
 }
+* {
+  margin: 0;
+  padding: 0;
+}
