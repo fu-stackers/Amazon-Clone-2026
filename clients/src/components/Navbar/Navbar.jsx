@@ -1,58 +1,68 @@
 import React from "react";
-import amazonnavlogo from "../../assets/amazon_PNG25.png";
-import nav from "./Navbar.module.css";
-import americaflag from "../../assets/america.jpg";
-import ethpiopia from "../../assets/Ethiopia.jpg";
-function Navbar() {
+import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import amazonlogo from "../../assets/amazon_PNG25.png";
+import { IoLocationOutline } from "react-icons/io5";
+
+const Navbar = () => {
   return (
-    <nav>
-      <div className={nav.nav_box}>
-        <div className={nav.logo_box}>
-          <a href="/">
-            <img src={amazonnavlogo} alt="" />
-          </a>
-
-          <div className={nav.delivery}>
-            <div>loca</div>
-            <div className={nav.delivery_location}>
-              <span>Deliver to</span>
-              <p>Ethiopia</p>
-            </div>
-          </div>
+    <header className="flex items-center h-[60px] bg-[#131921] sticky top-0 z-[100] px-4">
+      {/* THE LOGO & LOCATION SECTION */}
+      <div className="flex items-center">
+        <div className="w-[100px] mt-2 mr-4 cursor-pointer">
+          <img src={amazonlogo} alt="amazon-logo" className="object-contain" />
         </div>
 
-        <div className={nav.input_box}>
-          <select name="" id="">
-            <option value="ALL">ALL</option>
-            <option value="half">half</option>
-          </select>
-          <input type="text" placeholder="search products" />
-          {/* icos */}
-        </div>
-
-        <div className={nav.select_box}>
-          <div className={nav.flag}>
-            <img src={americaflag} alt="" />
-            <select name="" id="">
-              <option value="">EN</option>
-              <option value="">AM</option>
-            </select>
+        {/* FIX: Corrected "flex", added white text, and aligned items */}
+        <div className="flex items-center text-white cursor-pointer hover:outline hover:outline-1 p-1">
+          <IoLocationOutline className="text-xl mt-2" />
+          <div className="flex flex-col ml-1">
+            <span className="text-[10px] text-gray-300">Deliver to</span>
+            <span className="text-[13px] font-extrabold">Ethiopia</span>
           </div>
-          <a href="" className={nav.signin}>
-            <p className={nav.small_text}>hello ,sign in</p>
-            <p>Account & Lists</p>
-          </a>
-          <a href="" className={nav.order}>
-            <p className={nav.small_text}>returns </p>
-            <p>&Orders</p>
-          </a>
-          <a href="" className={nav.order_count}>
-            <span>0</span>
-            {/* icon */}
-          </a>
         </div>
       </div>
-    </nav>
+
+      {/* THE SEARCH BAR (Greedy Middle) */}
+      <div className="flex flex-1 items-center rounded-md overflow-hidden mx-4 h-[38px]">
+        {/* FIX: Cleaned up height and added a border-right for the select */}
+        <select className="h-full bg-gray-200 text-xs px-2 outline-none border-r border-gray-300 cursor-pointer">
+          <option value="all">All</option>
+        </select>
+        <input
+          className="h-full p-2.5 flex-1 outline-none text-black bg-white"
+          type="text"
+          placeholder="Search Amazon"
+        />
+        <div className="h-full w-[45px] bg-[#febd69] flex items-center justify-center cursor-pointer hover:bg-[#f3a847]">
+          <FiSearch className="text-black text-xl" />
+        </div>
+      </div>
+
+      {/* THE NAVIGATION LINKS */}
+      <nav className="flex items-center text-white">
+        <div className="flex flex-col mx-3 cursor-pointer hover:outline hover:outline-1 p-1">
+          <span className="text-[10px]">Hello, Guest</span>
+          <span className="text-[13px] font-extrabold">Sign In</span>
+        </div>
+
+        <div className="flex flex-col mx-3 cursor-pointer hover:outline hover:outline-1 p-1">
+          <span className="text-[10px]">Returns</span>
+          <span className="text-[13px] font-extrabold">& Orders</span>
+        </div>
+
+        {/* THE SHOPPING CART - Real Amazon Style */}
+        <div className="flex items-end mx-3 cursor-pointer hover:outline hover:outline-1 p-1 relative">
+          <div className="flex flex-col items-center">
+            <span className="text-[16px] font-bold text-[#f08804] absolute top-[-5px] right-[25px]">
+              0
+            </span>
+            <FiShoppingCart className="text-3xl" />
+          </div>
+          <span className="text-[13px] font-extrabold mt-4">Cart</span>
+        </div>
+      </nav>
+    </header>
   );
-}
+};
+
 export default Navbar;
