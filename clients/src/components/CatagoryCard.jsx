@@ -6,7 +6,7 @@ function CatagoryCard({ data }) {
     <>
       <div
         className="flex flex-col items-center cursor-pointer bg-white p-3 rounded transition-all duration-300 ease-out hover:scale-105"
-        onClick={() => navigate(`${data.link}`)}
+        onClick={() => navigate(`/category${data.link}`)}
       >
         <h1>{data.catagory}</h1>
         <img src={data.image} alt="" className="object-contain h-62.5" />

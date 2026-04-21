@@ -22,7 +22,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/Signln" element={<Signln />} />
-        <Route path="bycategory/:type" element={<GroupProuduct />} />
+        <Route path="/category/:categoryurl" element={<GroupProuduct />} />
       </Routes>
 
       <Footer />
