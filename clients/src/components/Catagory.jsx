@@ -1,19 +1,15 @@
 import React from "react";
-
-function Catagory({ data }) {
+import CatagoryCard from "./CatagoryCard";
+import store from "./Store";
+function Catagory() {
   return (
     <>
-      <div className="cursor-pointer bg-white p-3 rounded">
-        <h1>{data.catagory}</h1>
-        <img src={data.image} alt="" className="w-[200px] h-[150px]" />
-        <h1>
-          <a href="#" className="text-blue-500 text-xs">
-            show now
-          </a>
-        </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-black font-bold  pt-85 mr-5 ml-5">
+        {store.map((item, index) => {
+          return <CatagoryCard key={index} data={item} />;
+        })}
       </div>
     </>
   );
 }
-
 export default Catagory;

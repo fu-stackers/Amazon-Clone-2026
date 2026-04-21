@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { img } from "../assets/img/data";
-import Collect from "./Collect";
+import Collect from "./Catagory";
 const Banner = () => {
   const [index, setindex] = useState(0);
   useEffect(() => {
@@ -15,7 +15,7 @@ const Banner = () => {
   return (
     <>
       <div
-        className="bg-cover bg-center w-full h-[550px]"
+        className="bg-cover bg-center w-full h-137"
         style={{
           backgroundImage: `url(${img[index]})`,
         }}
