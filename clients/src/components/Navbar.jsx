@@ -49,6 +49,7 @@ const Navbar = () => {
 
         {/* THE NAVIGATION LINKS */}
         <nav className="flex items-center text-white">
+          <div>{/* flag and language */}</div>
           <div
             className="flex flex-col mx-3 cursor-pointer hover:outline-1 p-1"
             onClick={() => navigate("/Signln")}

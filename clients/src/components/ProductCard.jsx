@@ -1,8 +1,10 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+
 function ProductCard({ data }) {
   const { id, title, price, category, image, rating } = data;
+
   return (
     <>
       {/* [

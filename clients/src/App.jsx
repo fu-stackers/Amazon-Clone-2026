@@ -10,6 +10,7 @@ import Order from "./pages/Order";
 import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import Signln from "./pages/Signln";
+import GroupProuduct from "./pages/GroupProuduct";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/Signln" element={<Signln />} />
+        <Route path="bycategory/:type" element={<GroupProuduct />} />
       </Routes>
 
       <Footer />
