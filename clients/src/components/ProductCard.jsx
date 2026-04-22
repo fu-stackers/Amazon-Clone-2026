@@ -1,10 +1,11 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard({ data }) {
   const { id, title, price, category, image, rating } = data;
-
+  const navigate = useNavigate();
   return (
     <>
       {/* [
@@ -23,9 +24,9 @@ function ProductCard({ data }) {
 
       <div
         key={id}
-        className="group flex flex-col items-center justify-center just bg-white shadow-xl hover:scale-105 transition-transform p-5 relative"
+        className="group flex flex-col items-center justify-center  bg-white shadow-xl hover:scale-105 transition-transform p-5 relative"
       >
-        <div className="h-200px">
+        <div className="h-50" onClick={() => navigate(`/productdetails/${id}`)}>
           <img src={image} alt="" className="w-37.5 h-50" />
         </div>
         <p className="text-sm font-medium line-clamp-2 mb-2">{title}</p>

@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import Signln from "./pages/Signln";
 import GroupProuduct from "./pages/GroupProuduct";
+import Productdetail from "./pages/Productdetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/Signln" element={<Signln />} />
         <Route path="/category/:categoryurl" element={<GroupProuduct />} />
+        <Route path="/productdetails/:id" element={<Productdetail />} />
       </Routes>
 
       <Footer />
