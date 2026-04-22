@@ -15,12 +15,12 @@ const store = [
   {
     catagory: "Men's Clothing",
     image: `${img[2]}`,
-    link: "/electronics",
+    link: "/men's clothing",
   },
   {
-    catagory: "Jewelery",
+    catagory: "jewelery",
     image: `${img[3]}`,
-    link: "/electronics",
+    link: "/women's clothing",
   },
 ];
 export default store;

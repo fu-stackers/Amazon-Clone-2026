@@ -33,6 +33,7 @@ function Product() {
       .then((res) => {
         console.log(res.data);
         setproduct(res.data);
+        console.log(Product);
         setfetch(true);
       })
       .catch((err) => {
