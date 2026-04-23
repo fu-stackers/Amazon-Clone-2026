@@ -4,13 +4,13 @@ import amazonlogo from "../assets/amazon_PNG25.png";
 import { IoLocationOutline } from "react-icons/io5";
 import LowerNav from "./LowerNav";
 import { useNavigate } from "react-router-dom";
+import americaflag from "../assets/america.jpg";
 
 const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="sticky top-0 z-100">
       <header className="flex items-center h-15 bg-[#131921]  px-4">
-        {/* THE LOGO & LOCATION SECTION */}
         <div className="flex items-center">
           <div className="w-25 mt-2 mr-4 cursor-pointer">
             <img
@@ -21,7 +21,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* FIX: Corrected "flex", added white text, and aligned items */}
           <div className="flex items-center text-white cursor-pointer hover:outline-1 p-1">
             <IoLocationOutline className="text-xl mt-2" />
             <div className="flex flex-col ml-1">
@@ -31,7 +30,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* THE SEARCH BAR (Greedy Middle) */}
         <div className="flex flex-1 items-center rounded-md overflow-hidden mx-4 h-9.5">
           {/* FIX: Cleaned up height and added a border-right for the select */}
           <select className="h-full bg-gray-200 text-xs px-2 outline-none border-r border-gray-300 cursor-pointer">
@@ -47,9 +45,15 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* THE NAVIGATION LINKS */}
         <nav className="flex items-center text-white">
-          <div>{/* flag and language */}</div>
+          <div className="flex items-center justify-center hover:outline-1 py-2.5">
+            {/* flag and language */}
+            <img src={americaflag} alt="" className="w-6 block" />
+            <select className="h-full bg-[#131921] text-xs px- outline-none border-r border-gray-300 cursor-pointer">
+              <option value="en">EN</option>
+              <option value="am">AM</option>
+            </select>
+          </div>
           <div
             className="flex flex-col mx-3 cursor-pointer hover:outline-1 p-1"
             onClick={() => navigate("/Signln")}
@@ -66,7 +70,6 @@ const Navbar = () => {
             <span className="text-[13px] font-extrabold">& Orders</span>
           </div>
 
-          {/* THE SHOPPING CART - Real Amazon Style */}
           <div
             className="flex items-end mx-3 cursor-pointer hover:outline-1 p-1 relative"
             onClick={() => navigate("/cart")}

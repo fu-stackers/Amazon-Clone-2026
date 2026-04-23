@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../services/api";
-
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 
